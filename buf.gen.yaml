@@ -6,11 +6,11 @@ managed:
   enabled: true
 plugins:
   - remote: buf.build/grpc/python:v1.67.1
-    out: gen
+    out: dist/python
   - remote: buf.build/grpc/node:v1.12.4
-    out: gen
+    out: dist/node
   # dependencies
   - remote: buf.build/protocolbuffers/python:v28.3
-    out: gen
+    out: dist/python
   - remote: buf.build/protocolbuffers/js:v3.21.2
-    out: gen
+    out: dist/node
