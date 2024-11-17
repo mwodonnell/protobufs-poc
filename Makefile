@@ -3,6 +3,7 @@
 gen: lint breaking clean
 	@echo "==> Generating code with buf"
 	@buf generate
+	@echo "\tCode generated successfully"
 
 lint:
 	@echo "==> Linting code with buf"
