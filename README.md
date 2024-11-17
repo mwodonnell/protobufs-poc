@@ -1,5 +1,7 @@
 # 15Five Protobuf Repo
 
+### This README is a WIP - just general notes for now
+
 ---
 
 ## Development Environment Setup
@@ -11,6 +13,8 @@ associated tools.
 - Make
 - jq
 - buf-cli
+
+add more here
 
 ---
 
