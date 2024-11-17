@@ -1,10 +1,19 @@
-.PHONY: gen lint breaking
+.PHONY: gen lint breaking clean
 
-gen:
-	buf generate
+gen: lint breaking clean
+	@echo "==> Generating code with buf"
+	@buf generate
 
 lint:
-	buf lint --error-format=json | jq .
+	@echo "==> Linting code with buf"
+	@ buf lint
+	@echo "\tNo linting errors found"
 
 breaking:
-	buf breaking --against '.git#branch=main' --error-format=json | jq .
+	@echo "==> Checking for breaking changes against main with buf"
+	@buf breaking --against '.git#branch=main'
+	@echo "\tNo breaking changes found"
+
+clean:
+	@echo "==> Cleaning up generated code"
+	@rm -rf gen

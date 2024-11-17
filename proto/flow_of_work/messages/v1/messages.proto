@@ -1,19 +1,19 @@
 syntax = "proto3";
 
-package data_bridge.v1;
+package flow_of_work.messages.v1;
 
 // The greeting service definition.
-service GreeterService {
+service MessagesService {
   // Sends a greeting
-  rpc SayHello (SayHelloRequest) returns (SayHelloResponse) {}
+  rpc SendMessage (SendMessageRequest) returns (SendMessageResponse) {}
 }
 
 // The request message containing the user's name.
-message SayHelloRequest {
+message SendMessageRequest {
   string name = 1;
 }
 
 // The response message containing the greetings
-message SayHelloResponse {
+message SendMessageResponse {
   string message = 1;
 }
