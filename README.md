@@ -4,15 +4,15 @@
 
 ---
 
-## Development Environment Setup
+## Dev Environment Setup
 
 The protobuf repo is built over buf.build and CodeArtifact. To get started, you will need to install the buf cli and 
 associated tools.
 
 ### Requirements
 - Make
-- jq
 - buf-cli
+- 
 
 add more here
 

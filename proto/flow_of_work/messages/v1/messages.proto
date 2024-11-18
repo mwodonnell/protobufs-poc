@@ -2,18 +2,12 @@ syntax = "proto3";
 
 package flow_of_work.messages.v1;
 
-// The greeting service definition.
-service MessagesService {
-  // Sends a greeting
-  rpc SendMessage (SendMessageRequest) returns (SendMessageResponse) {}
-}
-
 // The request message containing the user's name.
-message SendMessageRequest {
+message Ping {
   string name = 1;
 }
 
 // The response message containing the greetings
-message SendMessageResponse {
+message Pong {
   string message = 1;
 }
