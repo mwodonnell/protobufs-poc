@@ -12,9 +12,15 @@ breaking:
 
 clean:
 	@echo "==> Cleaning up generated code"
-	@rm -rf gen
+	@rm -rf gen dist pysrc
 
 gen: lint breaking clean
 	@echo "==> Generating code with buf"
 	@buf generate
 	@echo "\tCode generated successfully"
+	@echo "==> Building python package"
+	@mkdir -p pysrc/ff_protobuffs && cp -r gen/python/* pysrc/ff_protobuffs/
+	@find ./pysrc/ff_protobuffs/ -type d -exec touch {}/__init__.py \;
+	@python -m build
+	#@rm -rf pysrc
+	@echo "\tPython package built successfully"

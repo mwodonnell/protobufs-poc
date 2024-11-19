@@ -12,9 +12,29 @@ associated tools.
 ### Requirements
 - Make
 - buf-cli
-- 
+- pyenv
+
+1) Install [buf-cli](brew install bufbuild/buf/buf) if you don't have it already
+   * If you're on a Mac, this is most likely `brew install bufbuild/buf/buf`
+2) Install [Make](https://formulae.brew.sh/formula/make) if you don't have it already
+   * If you're on a Mac, this is most likely `brew install make` 
+3) Install [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation) if you don't have it already
+   * If you're on a Mac, this is most likely `brew install pyenv`
+   * Make sure to follow the [setup guide](https://github.com/pyenv/pyenv?tab=readme-ov-file#set-up-your-shell-environment-for-pyenv) once installed
+4) Install python `3.12` with pyenv if you don't have it already
+   * `pyenv install 3.12`
+5) Create a virtualenv with `pyenv virtualenv 3.12 protobuf`
+   * replace `protobuf` with whatever you want to name your virtualenv if you want, rest of this doc assumes you 
+        named it `protobuf`
+6) If you want - make a handy alias to activate your venv and cd into the project directory
+   * `echo "alias ff-pb='pyenv activate protobuf && cd </path/to/protobuf-repo>" >> ~/.zshrc`
+7) If you did the above, just run `ff-pb` after opening a new shell window, otherwise activate the virtualenv
+   with `pyenv activate protobuf`
+8) Install poetry to your new virtualenv with `pip install poetry`
 
 add more here
+
+
 
 ---
 
