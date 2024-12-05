@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package data_bridge.word_parser.v1;
+
+// The parser service definition.
+service WordParserService {
+  // Sends a message to parse
+  rpc WordParser (WordParserRequest) returns (stream WordParserResponse) {}
+  rpc SentenceParser (SentenceParserRequest) returns (stream SentenceParserResponse) {}
+  rpc WordCounter (WordCounterRequest) returns (WordCounterResponse) {}
+  rpc SentenceCounter (SentenceCounterRequest) returns (SentenceCounterResponse) {}
+}
+
+message WordParserRequest {
+  string message = 1;
+}
+
+message WordParserResponse {
+  string token = 1;
+}
+
+message SentenceParserRequest {
+  string message = 1;
+}
+
+message SentenceParserResponse {
+  string token = 1;
+}
+
+message WordCounterRequest {
+  string message = 1;
+}
+
+message WordCounterResponse {
+  int32 count = 1;
+}
+
+message SentenceCounterRequest {
+  string message = 1;
+}
+
+message SentenceCounterResponse {
+  int32 count = 1;
+}

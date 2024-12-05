@@ -22,8 +22,10 @@ build-backend = "setuptools.build_meta"
 name = "ff_protobuffs"
 version = "0.1.0"
 description = "Centralized repo for managing protobufs"
-dependencies = [] # May need to require grpcio-tools and such
+dependencies = [
+    "grpcio==1.68.0",
+]
 
 [tool.setuptools.packages.find]
-where = ["pysrc/ff_protobuffs"]
+where = ["pysrc"]
 namespaces = false
